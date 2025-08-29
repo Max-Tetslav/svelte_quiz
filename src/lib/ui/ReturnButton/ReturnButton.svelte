@@ -1,19 +1,17 @@
 <script>
-	import { goto } from '$app/navigation';
-	import { navigating } from '$app/state';
 	import arrowBack from '$lib/assets/svg/arrow-back.svg';
-	// import { getPreviousPath, goBack } from '$lib/stores/navigation.svelte';
-	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
 
-	let {} = $props();
 
-	// getPreviousPath();
+  const goBack = () => {
+    history.back()
+  }
+
 </script>
 
-<a href="/settings" class="button" transition:blur onclick={() => history.back()}>
+<button class="button" transition:blur onclick={goBack}>
 	<img src={arrowBack} alt="settings logo" class="logo" />
-</a>
+</button>
 
 <svelte:head>
 	<link rel="preload" as="image" href={arrowBack} />
@@ -28,6 +26,7 @@
 		background: inherit;
 		text-decoration: none;
 		position: absolute;
+    border: none;
 		left: 0;
 		cursor: pointer;
 	}
