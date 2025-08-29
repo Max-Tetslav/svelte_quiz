@@ -1,9 +1,7 @@
-<script>
-	// let {} = $props();
-</script>
-
 <footer class="footer" id="footer">
-	<a class="github" href="https://github.com/Max-Tetslav" target="_blank">Github logo</a>
+  <a href='https://github.com/Max-Tetslav/svelte_quiz' target="_blank">
+    <img class="githubLogo" src="/svg/github.svg" alt="github-icon" width="40" height="40">
+  </a>
 </footer>
 
 <style lang="scss">
@@ -16,8 +14,13 @@
 		padding: 0 1rem;
 	}
 
-	.github {
+	.githubLogo {
 		text-decoration: none;
 		color: #ffffff;
+    transition: all ease 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 	}
 </style>

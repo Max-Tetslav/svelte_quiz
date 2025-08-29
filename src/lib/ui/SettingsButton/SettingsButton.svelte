@@ -1,16 +1,19 @@
 <script>
-	import settingsLogo from '$lib/assets/svg/settings.svg';
-	import { blur } from 'svelte/transition';
+	import { goto } from "$app/navigation";
 
 	let {} = $props();
+
+  const goToSettings = () => {
+    goto('/settings');
+  }
 </script>
 
-<a href="/settings" class="button" transition:blur>
-	<img src={settingsLogo} alt="settings logo" class="logo" />
-</a>
+<button onclick={goToSettings} class="button" role="link">
+	<img class="settingsIcon" src="/svg/settings.svg" alt="settings-icon" />
+</button>
 
 <svelte:head>
-	<link rel="preload" as="image" href={settingsLogo} />
+	<link rel="preload" as="image" href="/svg/settings.svg" />
 </svelte:head>
 
 <style lang="scss">
@@ -18,6 +21,7 @@
 		width: 4rem;
 		height: 4rem;
 		padding: 1rem;
+    border: none;
 		display: inline-block;
 		background: inherit;
 		text-decoration: none;
@@ -26,8 +30,13 @@
 		cursor: pointer;
 	}
 
-	.logo {
-		width: 2rem;
+  .settingsIcon {
+    width: 2rem;
 		height: 2rem;
-	}
+    transition: all ease 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 </style>

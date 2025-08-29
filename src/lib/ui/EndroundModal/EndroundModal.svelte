@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import PooIcon from '$lib/assets/svg/poo.svg';
-	import StarIcon from '$lib/assets/svg/star.svg';
 
 	let { score, onEndRoundClick } = $props();
 
@@ -46,10 +44,10 @@
 	<div class="stars-container">
 		{#if stars.length}
 			{#each stars as star, index (index)}
-				<img class="star" src={StarIcon} alt="star{index}" />
+				<img class="star" src="/svg/star.svg" alt="star{index}" />
 			{/each}
 		{:else}
-			<img class="star" src={PooIcon} alt="poo" />
+			<img class="star" src="/svg/poo.svg" alt="poo" />
 		{/if}
 	</div>
 	<p class="modal-text answer-author">Ваш результат: {score}</p>

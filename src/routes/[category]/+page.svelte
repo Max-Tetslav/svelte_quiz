@@ -2,11 +2,12 @@
 	import RoundCard from '../../lib/ui/RoundCard/RoundCard.svelte';
 	import { page } from '$app/state';
 	import { artistQuestings, artsQuestions } from '$lib/stores/questions.svelte';
+	import { blur } from 'svelte/transition';
 
 	const questions = page.params.category === 'arts' ? artsQuestions : artistQuestings;
 </script>
 
-<main class="content" id="content">
+<main class="content" id="content" in:blur>
 	{#each questions as round, index}
 		<RoundCard
 			roundNumber={index + 1}

@@ -1,5 +1,5 @@
-<script>
-	import logo from '$lib/assets/svg/main-logo.svg';
-</script>
+<img class="appLogo" src="/svg/main-logo.svg" alt="art quiz logo" />
 
-<img class="appLogo" src={logo} alt="art quiz logo" />
+<svelte:head>
+	<link rel="preload" as="image" href="/svg/settings.svg" />
+</svelte:head>

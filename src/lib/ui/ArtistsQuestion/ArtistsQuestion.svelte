@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import AnswerModal from '../AnswerModal/AnswerModal.svelte';
 	import { playSound } from '$lib/stores/sounds.svelte';
+	import { blur } from 'svelte/transition';
 
 	let { question, variants, onAnswerClick, onContinueRoundClick } = $props();
 

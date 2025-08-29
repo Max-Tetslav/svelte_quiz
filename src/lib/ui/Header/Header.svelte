@@ -4,6 +4,7 @@
 	import { page } from '$app/state';
 	import ReturnButton from '../ReturnButton/ReturnButton.svelte';
 	import { routes, type Pages } from '$lib/utils/routes';
+	import { blur } from 'svelte/transition';
 
 	let isSettingsPage = $derived(Boolean(page.url.pathname.includes('settings')));
 
@@ -24,7 +25,7 @@
 	{/if}
 
 	{#if !isHomePage}
-		<h2>
+		<h2 in:blur>
 			{routes[currentPage].title}
 		</h2>
 	{/if}

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import AppLogo from '../lib/ui/AppLogo/AppLogo.svelte';
-	import CategoryButton from '../lib/ui/CategoryButton/CategoryButton.svelte';
+	import AppLogo from '$lib/ui/AppLogo/AppLogo.svelte';
+	import CategoryButton from '$lib/ui/CategoryButton/CategoryButton.svelte';
 	import { preloadAudio } from '$lib/stores/sounds.svelte';
 
 	onMount(() => {

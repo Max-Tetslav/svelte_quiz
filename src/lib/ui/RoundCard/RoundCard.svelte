@@ -1,12 +1,20 @@
 <script>
+	import { goto } from "$app/navigation";
+	import { blur } from "svelte/transition";
+
 	let { roundNumber, categoryType, imageId, imageHref } = $props();
 
 	let roundResult = $state(localStorage.getItem(`${categoryType}${roundNumber}`));
+
+  const goToCategory = () => {
+    goto(categoryType + '/' + roundNumber)
+  }
 </script>
 
-<a
+<button
 	class="card {roundResult ? 'played-card' : 'noplayed-card'}"
-	href={categoryType + '/' + roundNumber}
+  onclick={goToCategory}
+  role="link"
 >
 	<p class="card-number card-info">{roundNumber}</p>
 
@@ -17,7 +25,7 @@
 	{/if}
 
 	<img class="card-img" id={imageId} src={imageHref} alt={imageId} />
-</a>
+</button>
 
 <style lang="scss">
 	.card {
@@ -25,6 +33,7 @@
 		width: 110px;
 		height: 110px;
 		border-radius: 20px;
+    padding: 0;
 		overflow: hidden;
 		object-position: center;
 		object-fit: cover;

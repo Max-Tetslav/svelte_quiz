@@ -77,7 +77,7 @@
 				/>
 			</div>
 			<div class="time__container">
-				<label class="container__label" for="time">Секунды</label>
+				<label class="container__label" for="time" data-disabled={!hasTimer}>Секунды</label>
 				<div class="time-input__container">
 					<button
 						class="time-btn"
@@ -172,9 +172,11 @@
 
 	.range_container {
 		min-width: 200px;
+    height: 100%;
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: end;
+    padding: 1rem 0
 	}
 
 	.timer__container {
@@ -197,6 +199,10 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
+
+    .container__label[data-disabled="true"] {
+      color: #efefef4d;
+    }
 	}
 
 	.time-input__container {

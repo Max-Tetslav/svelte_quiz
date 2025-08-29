@@ -3,7 +3,7 @@
 </script>
 
 <div class="modal-overlay">
-	<div class="modal-content">
+	<div class="modal-content" role="dialog">
 		{@render children()}
 		<button class="modal-text modal-btn" onclick={onModalClose}>{buttonLabel}</button>
 	</div>

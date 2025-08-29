@@ -60,7 +60,7 @@
 {#if hasAnswer}
 	<AnswerModal {question} onContinueClick={handleContinueClick} {isRightAnswer} />
 {:else}
-	<div class="question" in:blur>
+	<div class="question">
 		<p class="question__text">{@html question.question}</p>
 		{#if hasTimer}
 			<p class="question__timer">{timerValue}</p>

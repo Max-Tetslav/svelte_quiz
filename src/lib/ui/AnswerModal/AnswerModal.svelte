@@ -1,6 +1,4 @@
 <script lang="ts">
-	import RightAnswerIcon from '$lib/assets/svg/right-answer.svg';
-	import WrongAnswerIcon from '$lib/assets/svg/wrong-answer.svg';
 	import Modal from '../Modal/Modal.svelte';
 	import { onMount } from 'svelte';
 	import { playSound } from '$lib/stores/sounds.svelte';
@@ -21,7 +19,7 @@
 <Modal onModalClose={onContinueClick} buttonLabel="Продолжить">
 	<img
 		class="answer-status"
-		src={isRightAnswer ? RightAnswerIcon : WrongAnswerIcon}
+		src={isRightAnswer ? "/svg/right-answer.svg" : "/svg/wrong-answer.svg"}
 		alt={isRightAnswer ? 'right-answer-icon' : 'wrong-answer-icon'}
 	/>
 	<img class="answer-img" src="/img/{question.imageNum}.jpg" alt="image{question.imageNum}" />
